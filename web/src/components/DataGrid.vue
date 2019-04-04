@@ -4,7 +4,6 @@
       v-bind="props"
   >
     <template v-slot:item="item">
-      {{log(item)}}
       <tr>
         <td v-if="showExpand">
           <v-icon
@@ -41,7 +40,6 @@ import isFunction from 'lodash/isFunction'
   }
 })
 export default class DataGrid extends Vue {
-  log = console.log
   @Prop({ default: null })
   lineSize: string | null
 
