@@ -15,7 +15,7 @@
             mdi-chevron-right
           </v-icon>
         </td>
-        <editable-cell class="text-xs-left" v-for="(header, i) in item.headers" :key="i" v-model="item.item[header.value]" v-if="item.item[header.value] !== undefined"/>
+        <editable-cell class="text-xs-left" :class="linePadding" v-for="(header, i) in item.headers" :key="i" v-model="item.item[header.value]" v-if="item.item[header.value] !== undefined"/>
       </tr>
 
       <tr v-if="isExpanded(item)">
@@ -68,7 +68,7 @@ export default class DataGrid extends Vue {
     if (this.lineSize) {
       return `py-${this.lineSize}`
     }
-    return null
+    return ''
   }
 
   get props () {
