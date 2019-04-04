@@ -1,0 +1,18 @@
+{
+  "@gfi-centre-ouest/generator-docker-devbox": {
+    "promptValues": {
+      "projectName": "poc-datagrid",
+      "authorName": "vcastro",
+      "authorEmail": "victor.castro-cintas@gfi.fr",
+      "features~0": [
+        "node"
+      ],
+      "features~0~node~nodeVersion": "dubnium",
+      "features~0~node~nodeTools": [
+        "@vue/cli"
+      ],
+      "features~0~more": false,
+      "portPrefix": 354
+    }
+  }
+}

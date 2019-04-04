@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+. "$DOCKER_DEVBOX_DIR/.bash.lib.d/50-docker"
+
+PORTS=""
+if [ "$1" == "ui" ]; then
+  PORTS=" -p ${DOCKER_DEVBOX_PORT_PREFIX}89:8000"
+  echo "Port mapping:$PORTS"
+fi
+
+run$PORTS --workdir="$(_docker_workdir "/app")" --entrypoint vue node "$@"
