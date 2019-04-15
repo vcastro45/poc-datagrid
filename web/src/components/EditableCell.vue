@@ -31,9 +31,9 @@ export default class EditableCell extends Vue {
   onContentEditableInput (e: any) {
     if (e && e.path && e.path.length) {
       const elem: HTMLElement = e.path[0]
-      const value = elem.innerText.trim()
-      if (this.valueType === 'number' && !isNaN(value as number)) {
-        const parseFunction = (value as number) % 1 === 0 ? parseInt : parseFloat
+      const value: any = elem.innerText.trim()
+      if (this.valueType === 'number' && `${value}` !== "NaN") {
+        const parseFunction = value % 1 === 0 ? parseInt : parseFloat
         this.$emit('input', parseFunction(value))
       } else {
         this.$emit('input', value)
